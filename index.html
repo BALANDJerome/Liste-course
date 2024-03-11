@@ -10,53 +10,54 @@
 
 <body>
   <div class="list-container">
-    <div class="input-container">
+    <form class="input-container">
       <h1>Liste de course</h1>
-      <input type="text">
-      <select name="" id="">
+      <input type="text" id="input">
+      <select name="rays" id="select">
         <option disabled value="rayon" selected>--- Rayon ---</option>
-        <option value="electro-menager">Electro-Menager</option>
-        <option value="maison">Maison</option>
+        <option value="appliance">Electro-Menager</option>
+        <option value="house">Maison</option>
         <option value="hygiene">Hygiene</option>
-        <option value="boissons_vins">Boissons et vins</option>
-        <option value="poissonnerie">Poissonnerie</option>
-        <option value="boucherie_charcuterie">Boucherie et Charcuterie</option>
-        <option value="fruits_légumes">Fruits et Légumes</option>
-        <option value="boulangerie">Boulangerie</option>
-        <option value="surgelés">Surgelés</option>
-        <option value="epicerie">Epicerie</option>
+        <option value="drink">Boissons et vins</option>
+        <option value="fish">Poissonnerie</option>
+        <option value="butcher">Boucherie et Charcuterie</option>
+        <option value="fruits">Fruits et Légumes</option>
+        <option value="bakery">Boulangerie</option>
+        <option value="frozen">Surgelés</option>
+        <option value="grocery">Epicerie</option>
       </select>
-      <button type="submit">Enregistrer</button>
-    </div>
+      <button type="submit" id="btn">OK</button>
+    </form>
     <div class="display-list">
-      <ul>
+      <p id="noList"><em>Aucun produit enregistré</em></p>
+      <ul id="appliance">
         <h3>Electro-Menager</h3>
       </ul>
-      <ul>
+      <ul id="house">
         <h3>Maison</h3>
       </ul>
-      <ul>
+      <ul id="hygiene">
         <h3>Hygiene</h3>
       </ul>
-      <ul>
+      <ul id="drink">
         <h3>Boissons et vins</h3>
       </ul>
-      <ul>
+      <ul id="fish">
         <h3>Poissonnerie</h3>
       </ul>
-      <ul>
+      <ul id="butcher">
         <h3>Boucherie et Charcuterie</h3>
       </ul>
-      <ul>
+      <ul id="fruits">
         <h3>Fruits et Légumes</h3>
       </ul>
-      <ul>
+      <ul id="bakery">
         <h3>Boulangerie</h3>
       </ul>
-      <ul>
+      <ul id="frozen">
         <h3>Surgelés</h3>
       </ul>
-      <ul>
+      <ul id="grocery">
         <h3>Epicerie</h3>
       </ul>
     </div>
