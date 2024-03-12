@@ -17,20 +17,24 @@ body {
   max-width: 1000px;
   width: 90vw;
 }
-.input-container {
+.form-container {
   text-align: center;
+}
+.input-select-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.input-select {
+  position: relative;
 }
 h1 {
   text-transform: uppercase;
   color: rgb(60, 60, 211);
 }
-input {
-  max-width: 300px;
-}
 input,
 select,
 button {
-  width: 100%;
   height: 30px;
   background: none;
   border-radius: 10px;
@@ -39,16 +43,23 @@ button {
   font-size: 1.1rem;
 }
 select {
-  max-width: 130px;
+  max-width: 150px;
 }
 option {
   background: none;
 }
+span {
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  color: red;
+  display: none;
+}
 button {
   cursor: pointer;
-  max-width: 50px;
   padding: 5px;
   transition: 0.2s;
+  margin-bottom: 25px;
 }
 button:hover {
   font-weight: bold;
@@ -58,4 +69,25 @@ ul {
   color: rgb(34, 42, 156);
   margin: 10px auto;
   display: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+li {
+  font-size: 1.2rem;
+  list-style-type: "\2610";
+  list-style-position: inside;
+  padding: 2px 5px;
+}
+ul li:hover::after {
+  content: "(Rayer)";
+  position: absolute;
+  font-size: 1rem;
+  color: rgba(250, 0, 0, 0.877);
+  transform: translate(7px, 5px);
+}
+.checked {
+  list-style-type: "\2611";
+}
+.checked:hover::after {
+  content: "(supprimer)";
 }

@@ -10,23 +10,31 @@
 
 <body>
   <div class="list-container">
-    <form class="input-container">
+    <form class="form-container">
       <h1>Liste de course</h1>
-      <input type="text" id="input">
-      <select name="rays" id="select">
-        <option disabled value="rayon" selected>--- Rayon ---</option>
-        <option value="appliance">Electro-Menager</option>
-        <option value="house">Maison</option>
-        <option value="hygiene">Hygiene</option>
-        <option value="drink">Boissons et vins</option>
-        <option value="fish">Poissonnerie</option>
-        <option value="butcher">Boucherie et Charcuterie</option>
-        <option value="fruits">Fruits et Légumes</option>
-        <option value="bakery">Boulangerie</option>
-        <option value="frozen">Surgelés</option>
-        <option value="grocery">Epicerie</option>
-      </select>
-      <button type="submit" id="btn">OK</button>
+      <div class="input-select-container">
+        <div class="input-select">
+          <input type="text" id="input">
+          <span id="inputSpan">Aucun produit</span>
+        </div>
+        <div class="input-select">
+          <select name="rays" id="select">
+            <option disabled value="" selected>--- Rayon ---</option>
+            <option value="appliance">Electro-Menager</option>
+            <option value="house">Maison</option>
+            <option value="hygiene">Hygiene</option>
+            <option value="drink">Boissons et vins</option>
+            <option value="fish">Poissonnerie</option>
+            <option value="butcher">Boucherie et Charcuterie</option>
+            <option value="fruits">Fruits et Légumes</option>
+            <option value="bakery">Boulangerie</option>
+            <option value="frozen">Surgelés</option>
+            <option value="grocery">Epicerie</option>
+          </select>
+          <span id="selectSpan">Rayon non selectionné</span>
+        </div>
+        <button type="submit" id="btn">OK</button>
+      </div>
     </form>
     <div class="display-list">
       <p id="noList"><em>Aucun produit enregistré</em></p>
