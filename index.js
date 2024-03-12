@@ -12,7 +12,7 @@ function reload() {
 
 function displayList(id) {
   const ul = document.getElementById(id);
-  ul.style.display = "block";
+  ul.style.display = "flex";
   ul.innerHTML += `
     <li> ${input.value}</li>
     `;
@@ -45,3 +45,14 @@ btn.addEventListener("click", (e) => {
 input.addEventListener("input", () => displaySpan(input, inputSpan));
 
 select.addEventListener("input", () => displaySpan(select, selectSpan));
+
+list.addEventListener("click", (e) => {
+  if (e.target.localName == "li") {
+    if (e.target.classList.contains("checked")) {
+      e.target.remove();
+    } else {
+      e.target.classList.add("checked");
+    }
+    save();
+  }
+});

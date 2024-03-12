@@ -67,12 +67,14 @@ button:hover {
 }
 ul {
   color: rgb(34, 42, 156);
-  margin: 10px auto;
+  margin: 10px 0;
   display: none;
   font-size: 1.3rem;
-  cursor: pointer;
+  flex-direction: column;
+  align-items: flex-start;
 }
 li {
+  cursor: pointer;
   font-size: 1.2rem;
   list-style-type: "\2610";
   list-style-position: inside;
@@ -87,6 +89,7 @@ ul li:hover::after {
 }
 .checked {
   list-style-type: "\2611";
+  text-decoration: line-through;
 }
 .checked:hover::after {
   content: "(supprimer)";
