@@ -12,10 +12,18 @@ function reload() {
 
 function displayList(id) {
   const ul = document.getElementById(id);
-  ul.style.display = "flex";
-  ul.innerHTML += `
+  if (!input.value && ul.children.length == 2) {
+    ul.style.display = "none";
+    ul.classList.remove("test");
+  } else if (input.value) {
+    if (ul.children.length == 2) {
+      ul.classList.add("test");
+    }
+    ul.style.display = "flex";
+    ul.innerHTML += `
     <li> ${input.value}</li>
     `;
+  }
 }
 function displaySpan(tag, span) {
   if (tag.value.length == 0) {
@@ -49,6 +57,8 @@ select.addEventListener("input", () => displaySpan(select, selectSpan));
 list.addEventListener("click", (e) => {
   if (e.target.localName == "li") {
     if (e.target.classList.contains("checked")) {
+      input.value = "";
+      displayList(e.target.parentElement.id);
       e.target.remove();
     } else {
       e.target.classList.add("checked");
