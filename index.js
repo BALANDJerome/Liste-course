@@ -1,11 +1,14 @@
 const list = document.querySelector(".display-list");
+let array = [];
 
 function save() {
   localStorage.setItem("shoppingList", list.innerHTML);
+  localStorage.setItem("shoppingList2", array);
 }
 function reload() {
   if (localStorage.shoppingList) {
     list.innerHTML = localStorage.getItem("shoppingList");
+    array = localStorage.getItem("shoppingList2");
   } else {
   }
 }
@@ -14,11 +17,7 @@ function displayList(id) {
   const ul = document.getElementById(id);
   if (!input.value && ul.children.length == 2) {
     ul.style.display = "none";
-    ul.classList.remove("test");
   } else if (input.value) {
-    if (ul.children.length == 2) {
-      ul.classList.add("test");
-    }
     ul.style.display = "flex";
     ul.innerHTML += `
     <li> ${input.value}</li>
@@ -44,13 +43,24 @@ btn.addEventListener("click", (e) => {
   } else {
     noList.style.display = "none";
     displayList(select.value);
+    array.push(input.value, select.value);
+    console.log(array);
     save();
     input.value = "";
     select.value = "";
   }
 });
 
-input.addEventListener("input", () => displaySpan(input, inputSpan));
+input.addEventListener("input", () => {
+  displaySpan(input, inputSpan);
+  // array.some((a) => {
+  //   if (a === input.value) {
+  //     select.value = array[array.indexOf(a) + 1];
+  //   } else {
+  //     // select.value = "";
+  //   }
+  // });
+});
 
 select.addEventListener("input", () => displaySpan(select, selectSpan));
 
