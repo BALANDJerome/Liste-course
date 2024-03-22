@@ -3,12 +3,12 @@ let array = [];
 
 function save() {
   localStorage.setItem("shoppingList", list.innerHTML);
-  localStorage.setItem("shoppingList2", array);
+  localStorage.shoppingList2 = JSON.stringify(array);
 }
 function reload() {
   if (localStorage.shoppingList) {
     list.innerHTML = localStorage.getItem("shoppingList");
-    array = localStorage.getItem("shoppingList2");
+    array = JSON.parse(localStorage.shoppingList2);
   } else {
   }
 }
@@ -41,11 +41,11 @@ btn.addEventListener("click", (e) => {
   } else if (select.value == "") {
     displaySpan(select, selectSpan);
   } else {
+    array.push(input.value, select.value);
     noList.style.display = "none";
     displayList(select.value);
-    array.push(input.value, select.value);
-    console.log(array);
     save();
+    console.log(array);
     input.value = "";
     select.value = "";
   }
