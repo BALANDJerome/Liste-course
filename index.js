@@ -77,3 +77,8 @@ list.addEventListener("click", (e) => {
     save();
   }
 });
+
+reset.addEventListener("click", () => {
+  localStorage.removeItem("shoppingList");
+  localStorage.removeItem("shoppingList2");
+});
