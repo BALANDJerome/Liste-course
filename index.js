@@ -45,7 +45,6 @@ btn.addEventListener("click", (e) => {
     noList.style.display = "none";
     displayList(select.value);
     save();
-    console.log(array);
     input.value = "";
     select.value = "";
   }
@@ -53,13 +52,15 @@ btn.addEventListener("click", (e) => {
 
 input.addEventListener("input", () => {
   displaySpan(input, inputSpan);
-  // array.some((a) => {
-  //   if (a === input.value) {
-  //     select.value = array[array.indexOf(a) + 1];
-  //   } else {
-  //     // select.value = "";
-  //   }
-  // });
+  let w = 0;
+  while (w < array.length) {
+    if (array[w] == input.value) {
+      select.value = array[w + 1];
+      break;
+    }
+    select.value = "";
+    w += 2;
+  }
 });
 
 select.addEventListener("input", () => displaySpan(select, selectSpan));
