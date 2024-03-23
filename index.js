@@ -78,7 +78,8 @@ list.addEventListener("click", (e) => {
   }
 });
 
-reset.addEventListener("click", () => {
-  localStorage.removeItem("shoppingList");
-  localStorage.removeItem("shoppingList2");
-});
+// reset.addEventListener("click", () => {
+//   localStorage.removeItem("shoppingList");
+//   localStorage.removeItem("shoppingList2");
+//   location.reload();
+// });
