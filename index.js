@@ -1,5 +1,18 @@
 const list = document.querySelector(".display-list");
 let array = [];
+// let array2 = [
+//   { appliance: "" },
+//   { house: "" },
+//   { hygiene: "" },
+//   { drink: "" },
+//   { fish: "" },
+//   { butcher: "" },
+//   { fruits: "" },
+//   { dairy: "" },
+//   { bakery: "" },
+//   { frozen: "" },
+//   { grocery: "" },
+// ];
 
 function save() {
   localStorage.setItem("shoppingList", list.innerHTML);
@@ -8,8 +21,9 @@ function save() {
 function reload() {
   if (localStorage.shoppingList) {
     list.innerHTML = localStorage.getItem("shoppingList");
+  }
+  if (localStorage.shoppingList2) {
     array = JSON.parse(localStorage.shoppingList2);
-  } else {
   }
 }
 
