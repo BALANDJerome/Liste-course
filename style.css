@@ -87,6 +87,12 @@ ul li:hover::after {
   color: rgba(250, 0, 0, 0.877);
   transform: translate(7px, 5px);
 }
+#number {
+  width: 30px;
+  height: auto;
+  margin: 0;
+  text-align: center;
+}
 .checked {
   list-style-type: "\2611";
   text-decoration: line-through;

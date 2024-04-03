@@ -34,7 +34,7 @@ function displayList(id) {
   } else if (input.value) {
     ul.style.display = "flex";
     ul.innerHTML += `
-    <li> ${input.value}</li>
+    <li> <input type="number" id="number" value="1"> ${input.value}</li>
     `;
   }
 }
