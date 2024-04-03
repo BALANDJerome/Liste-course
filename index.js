@@ -34,7 +34,7 @@ function displayList(id) {
   } else if (input.value) {
     ul.style.display = "flex";
     ul.innerHTML += `
-    <li> <input type="number" id="number" value="1"> ${input.value}</li>
+    <li> <input type="number" id="number" min="0" value="1"> ${input.value}</li>
     `;
   }
 }
@@ -80,7 +80,20 @@ input.addEventListener("input", () => {
 select.addEventListener("input", () => displaySpan(select, selectSpan));
 
 list.addEventListener("click", (e) => {
-  if (e.target.localName == "li") {
+  const numbers = document.querySelectorAll('input[type="number"]');
+  if (e.target.localName === "input") {
+    numbers.forEach((number) => {
+      // console.log(number.value);
+      number.addEventListener("input", (e) => {
+        console.log("ok " + number.value);
+        if (number.value === "0") {
+          e.target.parentElement.classList.add("checked");
+          number.disabled = true;
+        }
+      });
+    });
+  }
+  if (e.target.localName === "li") {
     if (e.target.classList.contains("checked")) {
       input.value = "";
       displayList(e.target.parentElement.id);
@@ -88,8 +101,8 @@ list.addEventListener("click", (e) => {
     } else {
       e.target.classList.add("checked");
     }
-    save();
   }
+  save();
 });
 
 // reset.addEventListener("click", () => {

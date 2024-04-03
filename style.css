@@ -88,7 +88,7 @@ ul li:hover::after {
   transform: translate(7px, 5px);
 }
 #number {
-  width: 30px;
+  width: 40px;
   height: auto;
   margin: 0;
   text-align: center;
